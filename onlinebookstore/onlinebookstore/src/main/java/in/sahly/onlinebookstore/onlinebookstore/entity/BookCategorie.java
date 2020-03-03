@@ -16,7 +16,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Table(name="lbl_category")
+@Table(name="tbl_category")
 @Setter
 @Getter
 @ToString
@@ -28,4 +28,23 @@ private Long id;
 private String categoryName;
 @OneToMany(cascade=CascadeType.ALL, mappedBy="category")
 private Set<Book> book;
+public Long getId() {
+	return id;
+}
+public void setId(Long id) {
+	this.id = id;
+}
+public String getCategoryName() {
+	return categoryName;
+}
+public void setCategoryName(String categoryName) {
+	this.categoryName = categoryName;
+}
+public Set<Book> getBook() {
+	return book;
+}
+public void setBook(Set<Book> book) {
+	this.book = book;
+}
+
 }
